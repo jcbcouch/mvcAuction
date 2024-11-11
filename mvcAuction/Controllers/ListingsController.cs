@@ -67,5 +67,23 @@ namespace mvcAuction.Controllers
             return View(listing);
         }
 
+        // GET: Listings/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var listing = await _listingsService.GetById(id);
+
+            if (listing == null)
+            {
+                return NotFound();
+            }
+
+            return View(listing);
+        }
+
     }
 }

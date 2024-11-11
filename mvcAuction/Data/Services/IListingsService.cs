@@ -6,5 +6,6 @@ namespace mvcAuction.Data.Services
     {
         IQueryable<Listing> GetAll();
         Task Add(Listing listing);
+        Task<Listing> GetById(int? id);
     }
 }
