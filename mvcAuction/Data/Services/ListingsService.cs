@@ -17,5 +17,11 @@ namespace mvcAuction.Data.Services
             var applicationDbContext = _context.Listings.Include(l => l.User);
             return applicationDbContext;
         }
+
+        public async Task Add(Listing listing)
+        {
+            _context.Listings.Add(listing);
+            await _context.SaveChangesAsync();
+        }
     }
 }
